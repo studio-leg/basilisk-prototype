@@ -1,0 +1,11 @@
+The package requires HD Render Pipeline version 3.0.0. (preview) or later to work as intended.
+
+If the demo scene is either too bright or entirely black (dark) then follow these steps"
+1. Go to Windows > Package Manager > HD Render Pipeline and make sure it is 3.0.0 if not then update to it.
+2. Edit > Render Pipeline > Single step upgrade script > Upgrade all Materials EmissionColor
+and give it a minute or two to upgrade your materials. 
+
+Render pipelines are being contantly updating and sometimes they change/break stuff because all render pipelines are in Preview (open beta).
+
+If you need further assistance/help please contact us at: support@quixel.se
+
