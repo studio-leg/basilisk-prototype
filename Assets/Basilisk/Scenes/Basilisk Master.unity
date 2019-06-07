@@ -184,7 +184,7 @@ PlayableDirector:
   m_GameObject: {fileID: 445282079}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: 016276c4ee855fb4e9de7ad64aaf78ba, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: 4e1803e5e6d77ff43bf168b6f19e1f76, type: 2}
   m_InitialState: 0
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
@@ -645,6 +645,16 @@ PrefabInstance:
     - target: {fileID: 484375482615693460, guid: 7b6b56f589a7df74182b861df726b146,
         type: 3}
       propertyPath: clearColorMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 485304283409379692, guid: 7b6b56f589a7df74182b861df726b146,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 485494131155299510, guid: 7b6b56f589a7df74182b861df726b146,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
