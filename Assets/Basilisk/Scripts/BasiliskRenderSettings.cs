@@ -14,7 +14,7 @@ public class BasiliskRenderSettings : MonoBehaviour
     [Header("Params")]
     public VolumeProfile volume;
 
-    Exposure exposure;
+    ColorAdjustments colourAdjustments;
 
     void Start()
     {
@@ -24,15 +24,15 @@ public class BasiliskRenderSettings : MonoBehaviour
     {
         if (volume)
         {
-            if (!exposure)
+            if (!colourAdjustments)
             {
-                volume.TryGet(out exposure);
+                volume.TryGet(out colourAdjustments);
             }
-            if (exposure)
+            if (colourAdjustments)
             {
-                var fixedExposure = exposure.fixedExposure;
-                fixedExposure.value = Exposure;
-                exposure.fixedExposure = fixedExposure;
+                var exposure = colourAdjustments.postExposure;
+                exposure.value = Exposure;
+                colourAdjustments.postExposure = exposure;
             }
         }
     }

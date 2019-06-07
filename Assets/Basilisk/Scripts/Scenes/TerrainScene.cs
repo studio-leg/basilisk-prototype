@@ -21,6 +21,7 @@ public class TerrainScene : BasiliskScene
     
     [Header("Calibration Light")]
     public MeshRenderer calibrationLightMesh;
+    CalibrationLightInteraction calibrationLightInteraction;
 
     [Header("Hands")]
     [Tooltip("Visual effect whose property to set with the output SDF texture")]
@@ -28,6 +29,7 @@ public class TerrainScene : BasiliskScene
     public string handVFXSpawnPropName = "SpawnRate";
     public SkinnedMeshRenderer leftHandMesh;
     public SkinnedMeshRenderer rightHandMesh;
+    CalibrationHandsInteraction calibrationHandsInteraction;
 
 
     void Start()
@@ -37,6 +39,18 @@ public class TerrainScene : BasiliskScene
     
     void Update()
     {
+        if (!calibrationLightInteraction)
+        {
+            calibrationLightInteraction = GetComponent<CalibrationLightInteraction>();
+        }
+        sunriseProgress = calibrationLightInteraction.percent;
+
+        if (!calibrationHandsInteraction)
+        {
+            calibrationHandsInteraction = GetComponent<CalibrationHandsInteraction>();
+        }
+        handsProgress = calibrationHandsInteraction.percent;
+
         if (sunriseProgress != sunriseProgress_)
         {
             sunriseProgress_ = sunriseProgress;

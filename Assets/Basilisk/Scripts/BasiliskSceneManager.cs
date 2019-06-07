@@ -12,6 +12,8 @@ public class BasiliskSceneManager : MonoBehaviour
     // 2 : Space Emancipation
     // 3 : Black Outro
     public BasiliskScene[] sceneEnvironments;
+    public KeyCode nextSceneKey = KeyCode.N;
+
     int sceneEnvIndex = 0;
     int nextSceneEnvIndex = -1;
 
@@ -23,7 +25,16 @@ public class BasiliskSceneManager : MonoBehaviour
     
     void Update()
     {
+        if (Input.GetKeyDown(nextSceneKey))
+        {
+            NextScene();
+        }
+    }
 
+    public void NextScene()
+    {
+        Scene scene = (Scene)((int)activeScene + 1);
+        PlayScene(scene);
     }
 
     /// <summary>
@@ -32,11 +43,12 @@ public class BasiliskSceneManager : MonoBehaviour
     /// <param name="scene"></param>
     public void PlayScene(Scene scene)
     {
-        // outro current scene
-        // intro target scene
+        // Cache the next scene index
         nextSceneEnvIndex = GetEnvironmentIndex(scene);
         if (nextSceneEnvIndex != sceneEnvIndex)
         {
+            // Outro the current scene
+            // Next scene will transition in afterwards
             sceneEnvironments[sceneEnvIndex].OnOutroComplete += BasiliskSceneManager_OnOutroComplete;
             sceneEnvironments[sceneEnvIndex].PlayOutro();
         }

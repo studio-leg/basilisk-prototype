@@ -78,30 +78,33 @@ public class MeshFolder : MonoBehaviour
 
     void UpdateMesh()
     {
-        var liveVertices = meshBase.vertices;
-        for (int foldI = 0; foldI < folds.Length; foldI++)
+        if (meshBase)
         {
-            var fold = folds[foldI];
-            fold.FoldVertices(ref liveVertices);
-        }
-        meshLive.vertices = liveVertices;
-        meshLive.RecalculateBounds();
-        meshLive.RecalculateNormals();
-        meshFilter.mesh = meshLive;
+            var liveVertices = meshBase.vertices;
+            for (int foldI = 0; foldI < folds.Length; foldI++)
+            {
+                var fold = folds[foldI];
+                fold.FoldVertices(ref liveVertices);
+            }
+            meshLive.vertices = liveVertices;
+            meshLive.RecalculateBounds();
+            meshLive.RecalculateNormals();
+            meshFilter.mesh = meshLive;
 
-        // Fold Props
-        for (int propI = 0; propI < props.Length; propI++)
-        {
-            var prop = props[propI];
-            var position = prop.BasePosition;
-            var transform = prop.transform;
-            transform.position = position;
-            transform.rotation = prop.BaseRotation;
-        }
-        for (int foldI = 0; foldI < folds.Length; foldI++)
-        {
-            var fold = folds[foldI];
-            fold.FoldProps();
+            // Fold Props
+            for (int propI = 0; propI < props.Length; propI++)
+            {
+                var prop = props[propI];
+                var position = prop.BasePosition;
+                var transform = prop.transform;
+                transform.position = position;
+                transform.rotation = prop.BaseRotation;
+            }
+            for (int foldI = 0; foldI < folds.Length; foldI++)
+            {
+                var fold = folds[foldI];
+                fold.FoldProps();
+            }
         }
     }
 
