@@ -1051,6 +1051,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 445282080}
+  - component: {fileID: 445282082}
+  - component: {fileID: 445282081}
+  - component: {fileID: 445282083}
+  - component: {fileID: 445282084}
+  - component: {fileID: 445282085}
   m_Layer: 0
   m_Name: Global Render Settings
   m_TagString: Untagged
@@ -1073,6 +1078,125 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &445282081
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 445282079}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!320 &445282082
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 445282079}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: 4e1803e5e6d77ff43bf168b6f19e1f76, type: 2}
+  m_InitialState: 0
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: -1632429002382817676, guid: 016276c4ee855fb4e9de7ad64aaf78ba, type: 2}
+    value: {fileID: 445282081}
+  - key: {fileID: -4761126261743601744, guid: 4e1803e5e6d77ff43bf168b6f19e1f76, type: 2}
+    value: {fileID: 445282081}
+  - key: {fileID: 7369288350247782025, guid: 016276c4ee855fb4e9de7ad64aaf78ba, type: 2}
+    value: {fileID: 445282085}
+  - key: {fileID: 7414729084623281996, guid: 4e1803e5e6d77ff43bf168b6f19e1f76, type: 2}
+    value: {fileID: 445282085}
+  m_ExposedReferences:
+    m_References: []
+--- !u!114 &445282083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 445282079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 168effe97be73d947ac8616c5bee7808, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Exposure: 15
+  volume: {fileID: 11400000, guid: a8b3a0fcb0a0dfb4f81d5e7655baa8e0, type: 2}
+--- !u!114 &445282084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 445282079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 094efa701ade721498fcbe5023478865, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeInAsset: {fileID: 11400000, guid: 016276c4ee855fb4e9de7ad64aaf78ba, type: 2}
+  fadeOutAsset: {fileID: 11400000, guid: 4e1803e5e6d77ff43bf168b6f19e1f76, type: 2}
+--- !u!114 &445282085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 445282079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 8cb2358b1f21ff1409e9022b75b0f962, type: 2}
+    - {fileID: 11400000, guid: fe94ffea9bd35fe4c8fd99bee3263980, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 445282084}
+          m_MethodName: FadeInComplete
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 445282084}
+          m_MethodName: FadeOutComplete
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
 --- !u!1 &452218781
 GameObject:
   m_ObjectHideFlags: 0
@@ -1814,6 +1938,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActive: 0
+  sceneAssets: {fileID: 0}
 --- !u!1 &741180040
 GameObject:
   m_ObjectHideFlags: 0
@@ -2094,7 +2219,7 @@ Light:
   m_BounceIntensity: 0
   m_ColorTemperature: 5500
   m_UseColorTemperature: 1
-  m_BoundingSphereOverride: {x: 9.813e-42, y: 1.02e-43, z: 1.462e-42, w: 0}
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -2435,6 +2560,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActive: 0
+  sceneAssets: {fileID: 300694746}
   sunriseProgress: 0
   handsProgress: 0
   mainLight: {fileID: 0}
@@ -3458,7 +3584,7 @@ MonoBehaviour:
   priority: -1
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: 92677ed6886ef03488c89897c876db53, type: 2}
+  sharedProfile: {fileID: 11400000, guid: a8b3a0fcb0a0dfb4f81d5e7655baa8e0, type: 2}
 --- !u!1 &1793220364
 GameObject:
   m_ObjectHideFlags: 0
@@ -4291,6 +4417,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActive: 0
+  sceneAssets: {fileID: 0}
 --- !u!1 &1945403298
 GameObject:
   m_ObjectHideFlags: 0
@@ -5119,6 +5246,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActive: 0
+  sceneAssets: {fileID: 741180040}
 --- !u!1 &2139763848
 GameObject:
   m_ObjectHideFlags: 0
