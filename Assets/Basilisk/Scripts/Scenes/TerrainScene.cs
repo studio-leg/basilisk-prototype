@@ -25,7 +25,7 @@ public class TerrainScene : BasiliskScene
 
     [Header("Hands")]
     [Tooltip("Visual effect whose property to set with the output SDF texture")]
-    public VisualEffect handVFX;
+    public VisualEffect[] handVFX;
     public string handVFXSpawnPropName = "SpawnRate";
     public SkinnedMeshRenderer leftHandMesh;
     public SkinnedMeshRenderer rightHandMesh;
@@ -61,7 +61,10 @@ public class TerrainScene : BasiliskScene
         if (handsProgress != handsProgress_)
         {
             handsProgress_ = handsProgress;
-            handVFX.SetFloat(handVFXSpawnPropName, handsProgress_ * 400);
+            for (int i = 0; i < handVFX.Length; i++)
+            {
+                handVFX[i].SetFloat(handVFXSpawnPropName, handsProgress_ * 400);
+            }
         }
     }
 }

@@ -16,13 +16,9 @@ public class BasiliskSceneManagerEditor : Editor
         {
             thing.CutToScene(BasiliskSceneManager.Scene.Intro);
         }
-        if (GUILayout.Button("Calibration"))
+        if (GUILayout.Button("Terrain"))
         {
-            thing.CutToScene(BasiliskSceneManager.Scene.Calibration);
-        }
-        if (GUILayout.Button("Manipulation"))
-        {
-            thing.CutToScene(BasiliskSceneManager.Scene.Manipulation);
+            thing.CutToScene(BasiliskSceneManager.Scene.Terrain);
         }
         if (GUILayout.Button("Emancipation"))
         {
@@ -39,13 +35,9 @@ public class BasiliskSceneManagerEditor : Editor
         {
             thing.PlayScene(BasiliskSceneManager.Scene.Intro);
         }
-        if (GUILayout.Button("Calibration"))
+        if (GUILayout.Button("Terrain"))
         {
-            thing.PlayScene(BasiliskSceneManager.Scene.Calibration);
-        }
-        if (GUILayout.Button("Manipulation"))
-        {
-            thing.PlayScene(BasiliskSceneManager.Scene.Manipulation);
+            thing.PlayScene(BasiliskSceneManager.Scene.Terrain);
         }
         if (GUILayout.Button("Emancipation"))
         {

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BasiliskSceneManager : MonoBehaviour
 {
-    public enum Scene { Intro, Calibration, Manipulation, Emancipation, Outro};
+    public enum Scene { Intro, Terrain, Emancipation, Outro};
     public Scene activeScene;
 
     // 0 : Space Intro
@@ -45,6 +45,7 @@ public class BasiliskSceneManager : MonoBehaviour
     {
         // Cache the next scene index
         nextSceneEnvIndex = GetEnvironmentIndex(scene);
+        activeScene = scene;
         if (nextSceneEnvIndex != sceneEnvIndex)
         {
             // Outro the current scene
@@ -92,9 +93,7 @@ public class BasiliskSceneManager : MonoBehaviour
         {
             case Scene.Intro:
                 return 0;
-            case Scene.Calibration:
-                return 1;
-            case Scene.Manipulation:
+            case Scene.Terrain:
                 return 1;
             case Scene.Emancipation:
                 return 2;
