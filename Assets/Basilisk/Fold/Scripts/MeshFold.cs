@@ -93,6 +93,7 @@ public class MeshFold : MonoBehaviour
         boxCollider = GetComponent<BoxCollider>();
         animationOffset = Random.value;
         UpdateFoldLine();
+        colour = Random.ColorHSV(0f, 1f, 0.5f, 1f, 0.5f, 1f);
     }
 
     public bool ContainsPoint(Vector3 Point)
