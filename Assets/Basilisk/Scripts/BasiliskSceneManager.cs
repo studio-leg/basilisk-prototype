@@ -20,9 +20,17 @@ public class BasiliskSceneManager : MonoBehaviour
 
     void Start()
     {
-
+        for (int i = 0; i < sceneEnvironments.Length; i++)
+        {
+            sceneEnvironments[i].OnNextScene += BasiliskSceneManager_OnNextScene;
+        }
     }
-    
+
+    private void BasiliskSceneManager_OnNextScene()
+    {
+        NextScene();
+    }
+
     void Update()
     {
         if (Input.GetKeyDown(nextSceneKey))

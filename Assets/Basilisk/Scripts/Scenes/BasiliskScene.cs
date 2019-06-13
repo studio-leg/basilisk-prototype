@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
 
 [ExecuteInEditMode]
 public class BasiliskScene : MonoBehaviour
@@ -10,8 +11,13 @@ public class BasiliskScene : MonoBehaviour
     bool isActive_ = true;
     public GameObject sceneAssets;
     BasiliskRenderController renderController;
+    public PlayableDirector director;
+    
+    [Header("Timeline")]
+    public PlayableAsset sceneTimeline;
 
-
+    public delegate void NextSceneAction();
+    public event NextSceneAction OnNextScene;
     public delegate void OutroCompleteAction();
     public event OutroCompleteAction OnOutroComplete;
     public delegate void IntroCompleteAction();
@@ -19,7 +25,10 @@ public class BasiliskScene : MonoBehaviour
 
     void Start()
     {
-        
+        if (!director)
+        {
+            director = GetComponent<PlayableDirector>();
+        }
     }
     
     void Update()
@@ -38,6 +47,14 @@ public class BasiliskScene : MonoBehaviour
             sceneAssets = GetComponentInChildren<BasiliskSceneAssets>(true).gameObject;
         }
         sceneAssets.SetActive(active);
+        if (active)
+        {
+            director.Play(sceneTimeline);
+        }
+        else
+        {
+            director.Stop();
+        }
     }
 
     public virtual void PlayIntro()
@@ -72,5 +89,10 @@ public class BasiliskScene : MonoBehaviour
         Debug.Log("BasiliskScene FadeOutComplete");
         renderController.OnFadeOutComplete -= RenderController_OnFadeOutComplete;
         OnOutroComplete?.Invoke();
+    }
+
+    public void NextScene()
+    {
+        OnNextScene?.Invoke();
     }
 }

@@ -12,6 +12,7 @@ public class MeshFolder : MonoBehaviour
     public bool doUpdateMesh = false;
     public bool doInit = false;
     public bool doReset = false;
+    public int numInPlace = 0;
 
     private MeshFilter meshFilter;
     private Mesh meshBase;
@@ -97,10 +98,15 @@ public class MeshFolder : MonoBehaviour
         if (meshBase)
         {
             var liveVertices = meshBase.vertices;
+            numInPlace = 0;
             for (int foldI = 0; foldI < folds.Length; foldI++)
             {
                 var fold = folds[foldI];
                 fold.FoldVertices(ref liveVertices);
+                if (fold.isInPlace)
+                {
+                    numInPlace++;
+                }
             }
             meshLive.vertices = liveVertices;
             meshLive.RecalculateBounds();

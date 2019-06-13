@@ -10,7 +10,8 @@ public class MeshFold : MonoBehaviour
     public float angle;
     public Color colour;
     public bool useHinge = true;
-    
+    public bool isInPlace = false;
+
     private Vector3 foldLinePointA = new Vector3(-999f, 0, 0);
     private Vector3 foldLinePointB = new Vector3(999f, 0, 0);
 
@@ -62,8 +63,8 @@ public class MeshFold : MonoBehaviour
             foldLinePointA = hinge.transform.TransformPoint(hinge.anchor + new Vector3(-99f, 0, 0));
             foldLinePointB = hinge.transform.TransformPoint(hinge.anchor + new Vector3(99f, 0, 0));
         }
-
         
+        isInPlace = (grabbable.isInPlace);
     }
 
     public void InitMesh(ref Vector3[] meshVertices)
