@@ -48,7 +48,7 @@ namespace Basilisk
                     if (lineRenderer)
                     {
                         lineRenderer.SetPosition(0, rayCastTransform.position);
-                        lineRenderer.SetPosition(1, remoteTransform.position);
+                        lineRenderer.SetPosition(1, raycastTarget.point);
                         lineRenderer.material.color = Color.red;
                         lineRenderer.material.SetColor("_UnlitColor", Color.red);
                     }
@@ -80,7 +80,7 @@ namespace Basilisk
                 if (lineRenderer)
                 {
                     lineRenderer.SetPosition(0, rayCastTransform.position);
-                    lineRenderer.SetPosition(1, remoteTransform.position);
+                    lineRenderer.SetPosition(1, remoteTransform.position - remoteGripOffset);
                     lineRenderer.material.color = Color.yellow;
                     lineRenderer.material.SetColor("_UnlitColor", Color.green);
                 }

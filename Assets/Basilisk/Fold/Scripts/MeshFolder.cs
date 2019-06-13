@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,6 +10,7 @@ public class MeshFolder : MonoBehaviour
     public MeshFold[] folds;
     public FoldableProp[] props;
     public bool doUpdateMesh = false;
+    public bool doInit = false;
     public bool doReset = false;
 
     private MeshFilter meshFilter;
@@ -26,10 +28,24 @@ public class MeshFolder : MonoBehaviour
         {
             UpdateMesh();
         }
+        if (doInit)
+        {
+            doInit = false;
+            Init();
+        }
         if (doReset)
         {
             doReset = false;
-            Init();
+            Reset();
+        }
+    }
+
+    public void Reset()
+    {
+        for (int foldI = 0; foldI < folds.Length; foldI++)
+        {
+            var fold = folds[foldI];
+            fold.Reset();
         }
     }
 

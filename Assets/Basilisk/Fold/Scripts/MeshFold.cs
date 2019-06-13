@@ -27,6 +27,9 @@ public class MeshFold : MonoBehaviour
     private Vector3[] meshVertices;
     private bool[] meshMaskVertices;
     private HingeJoint hinge;
+    private Rigidbody hingeRigidBody;
+    private Vector3 hingeHomePosition;
+    private GrabbableRemote grabbable;
 
     void Start()
     {
@@ -42,6 +45,13 @@ public class MeshFold : MonoBehaviour
         }
     }
 
+    public void Reset()
+    {
+        angle = 0;
+        hingeRigidBody.velocity = Vector3.zero;
+        hinge.transform.position = hingeHomePosition;
+    }
+
     void UpdateFoldLine()
     {
         foldLinePointA = transform.TransformPoint(new Vector3(-99f, 0, 0));
@@ -52,6 +62,8 @@ public class MeshFold : MonoBehaviour
             foldLinePointA = hinge.transform.TransformPoint(hinge.anchor + new Vector3(-99f, 0, 0));
             foldLinePointB = hinge.transform.TransformPoint(hinge.anchor + new Vector3(99f, 0, 0));
         }
+
+        
     }
 
     public void InitMesh(ref Vector3[] meshVertices)
@@ -90,6 +102,10 @@ public class MeshFold : MonoBehaviour
     public void Init()
     {
         hinge = GetComponentInChildren<HingeJoint>();
+        hingeRigidBody = hinge.GetComponent<Rigidbody>();
+        grabbable = hinge.GetComponent<GrabbableRemote>();
+        
+        hingeHomePosition = hinge.transform.position;
         boxCollider = GetComponent<BoxCollider>();
         animationOffset = Random.value;
         UpdateFoldLine();
