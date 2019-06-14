@@ -1548,18 +1548,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isActive: 1
   sceneAssets: {fileID: 0}
+  director: {fileID: 0}
+  sceneTimeline: {fileID: 0}
   sunriseProgress: 0
   handsProgress: 0
-  mainLight: {fileID: 8267468260901021}
-  lightRotMin: {x: -6, y: -212, z: 90}
-  lightRotMax: {x: 159.42, y: -212, z: 90}
-  calibrationLightMesh: {fileID: 8267466995898510}
-  handVFX:
-  - {fileID: 8267468249168131}
-  - {fileID: 1509857479}
-  handVFXSpawnPropName: SpawnRate
-  leftHandMesh: {fileID: 0}
-  rightHandMesh: {fileID: 0}
 --- !u!114 &311680871908090833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1572,11 +1564,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6855f50bb98f8ab4291038646f0683c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  percent: 0
+  doReset: 0
+  isActive: 0
   headTransform: {fileID: 0}
   lightCollider: {fileID: 8267466995898497}
-  percent: 0
   activeThreshold: 5
-  doReset: 0
+  mainLight: {fileID: 0}
+  lightRotMin: {x: -6, y: -212, z: 90}
+  lightRotMax: {x: 159.42, y: -212, z: 90}
+  calibrationLightMesh: {fileID: 0}
 --- !u!114 &8267467486296574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1589,13 +1586,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9eda5ceb575156d4aa1b79c23755b8fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  percent: 0
+  doReset: 0
+  isActive: 0
   headTransform: {fileID: 0}
   handColliders:
   - {fileID: 0}
   - {fileID: 0}
-  percent: 0
   activeThreshold: 5
-  doReset: 0
+  leftHandVFX: {fileID: 0}
+  rightHandVFX: {fileID: 0}
+  handVFXSpawnPropName: SpawnRate
+  leftHandMesh: {fileID: 0}
+  rightHandMesh: {fileID: 0}
 --- !u!1 &8267467697966087
 GameObject:
   m_ObjectHideFlags: 0
@@ -2753,7 +2756,9 @@ MonoBehaviour:
   - {fileID: 8267467888145512}
   - {fileID: 8267466517159984}
   doUpdateMesh: 1
+  doInit: 0
   doReset: 1
+  numInPlace: 0
 --- !u!33 &1515152203390093158
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -2849,6 +2854,7 @@ MonoBehaviour:
   angle: 0
   colour: {r: 0.52909046, g: 0.8922321, b: 0.1349065, a: 1}
   useHinge: 1
+  isInPlace: 0
   animationEnabled: 0
   animationSpeed: 1
   animationMaxAngle: -40
@@ -2923,6 +2929,7 @@ MonoBehaviour:
   angle: 0
   colour: {r: 0.22306482, g: 0.17897272, b: 0.59381837, a: 1}
   useHinge: 1
+  isInPlace: 0
   animationEnabled: 0
   animationSpeed: 1
   animationMaxAngle: -40
@@ -3089,6 +3096,7 @@ MonoBehaviour:
   angle: 0
   colour: {r: 0.17229392, g: 0.43522754, b: 0.6463241, a: 1}
   useHinge: 1
+  isInPlace: 0
   animationEnabled: 0
   animationSpeed: 1
   animationMaxAngle: -40
@@ -3269,6 +3277,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5972edff4f03271458e4d9a5788e3a38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isInPlace: 0
 --- !u!1 &2672671154863382121
 GameObject:
   m_ObjectHideFlags: 0
@@ -3318,6 +3327,7 @@ MonoBehaviour:
   angle: 0
   colour: {r: 0.82521486, g: 0.8101684, b: 0.10580213, a: 1}
   useHinge: 1
+  isInPlace: 0
   animationEnabled: 0
   animationSpeed: 1
   animationMaxAngle: -40
@@ -3391,6 +3401,7 @@ MonoBehaviour:
   angle: 0
   colour: {r: 0.6353319, g: 0.6767977, b: 0.2929468, a: 1}
   useHinge: 1
+  isInPlace: 0
   animationEnabled: 0
   animationSpeed: 1
   animationMaxAngle: -40
@@ -3573,6 +3584,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5972edff4f03271458e4d9a5788e3a38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isInPlace: 0
 --- !u!1 &3570522067499216242
 GameObject:
   m_ObjectHideFlags: 0
@@ -3777,6 +3789,7 @@ MonoBehaviour:
   angle: 0
   colour: {r: 0.29557744, g: 0.21862996, b: 0.7914876, a: 1}
   useHinge: 1
+  isInPlace: 0
   animationEnabled: 0
   animationSpeed: 1
   animationMaxAngle: -40
@@ -3956,6 +3969,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5972edff4f03271458e4d9a5788e3a38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isInPlace: 0
 --- !u!1 &6603122158739402811
 GameObject:
   m_ObjectHideFlags: 0
@@ -4208,6 +4222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5972edff4f03271458e4d9a5788e3a38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isInPlace: 0
 --- !u!1 &7028408451676639109
 GameObject:
   m_ObjectHideFlags: 0
@@ -4366,6 +4381,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5972edff4f03271458e4d9a5788e3a38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isInPlace: 0
 --- !u!1 &7847966248532339811
 GameObject:
   m_ObjectHideFlags: 0
@@ -4524,6 +4540,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5972edff4f03271458e4d9a5788e3a38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isInPlace: 0
 --- !u!1 &8024526263029381711
 GameObject:
   m_ObjectHideFlags: 0
@@ -4573,6 +4590,7 @@ MonoBehaviour:
   angle: 0
   colour: {r: 0.6009962, g: 0.14128, b: 0.60300565, a: 1}
   useHinge: 1
+  isInPlace: 0
   animationEnabled: 0
   animationSpeed: 1
   animationMaxAngle: -40
@@ -4758,6 +4776,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5972edff4f03271458e4d9a5788e3a38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isInPlace: 0
 --- !u!1 &8206746042576702846
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,7 +8,7 @@ public class BasiliskInteraction : MonoBehaviour
     public float percent = 0f;
     public bool doReset = false;
 
-    protected bool isActive = false;
+    public bool isActive = false;
 
     public delegate void InteractionCompleteAction();
     public event InteractionCompleteAction OnInteractionComplete;

@@ -11,8 +11,8 @@ public class CalibrationHandsInteraction : BasiliskInteraction
     public float activeThreshold = 5f;
     
     [Header("Hands")]
-    [Tooltip("Visual effect whose property to set with the output SDF texture")]
-    public VisualEffect[] handVFX;
+    public VisualEffect leftHandVFX;
+    public VisualEffect rightHandVFX;
     public string handVFXSpawnPropName = "SpawnRate";
     public SkinnedMeshRenderer leftHandMesh;
     public SkinnedMeshRenderer rightHandMesh;
@@ -34,12 +34,37 @@ public class CalibrationHandsInteraction : BasiliskInteraction
                 timer += Time.deltaTime;
                 percent = Mathf.Clamp01(timer / activeThreshold);
             }
+
+            var handSmoothness = MathUtils.Map(percent, 0f, 1f, 1f, 0.6f);
+            var handRefaction = MathUtils.Map(percent, 0f, 1f, 1f, 1.02f);
+            var handThickness = MathUtils.Map(percent, 0f, 1f, 0f, 0.4f);
+            leftHandMesh.material.SetFloat("_Smoothness", handSmoothness);
+            leftHandMesh.material.SetFloat("_Ior", handRefaction);
+            leftHandMesh.material.SetFloat("_Thickness", handThickness);
+            rightHandMesh.material.SetFloat("_Smoothness", handSmoothness);
+            rightHandMesh.material.SetFloat("_Ior", handRefaction);
+            rightHandMesh.material.SetFloat("_Thickness", handThickness);
+
         }
 
-        for (int i = 0; i < handVFX.Length; i++)
+        if (leftHandMesh.gameObject.activeInHierarchy)
         {
-            handVFX[i].SetFloat(handVFXSpawnPropName, percent * 400);
+            leftHandVFX.SetFloat(handVFXSpawnPropName, percent * 400);
         }
+        else
+        {
+            leftHandVFX.SetFloat(handVFXSpawnPropName, 0);
+        }
+
+        if (rightHandMesh.gameObject.activeInHierarchy)
+        {
+            rightHandVFX.SetFloat(handVFXSpawnPropName, percent * 400);
+        }
+        else
+        {
+            rightHandVFX.SetFloat(handVFXSpawnPropName, 0);
+        }
+
     }
 
     override public void Reset()
