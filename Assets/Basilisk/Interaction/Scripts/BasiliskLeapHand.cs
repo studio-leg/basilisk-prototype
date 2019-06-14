@@ -14,14 +14,15 @@ namespace Basilisk
         public float force = 1f;
         public Transform rayCastTransform;
         public Vector3 rayCastDirection = Vector3.forward;
+        public bool isActive = false;
 
         LineRenderer lineRenderer;
 
-        bool raycastHit = false;
+        public bool raycastHit = false;
         Transform remoteTransform;
         Vector3 remoteGripOffset;
         GameObject remoteTarget;
-        bool isGrippingRemote = false;
+        public bool isGrippingRemote = false;
         float distanceToTarget = 0;
 
         void Start()
@@ -37,6 +38,10 @@ namespace Basilisk
         
         void Update()
         {
+            if (!isActive)
+            {
+                return;
+            }
             if (!isGrippingRemote)
             {
                 RaycastHit raycastTarget;
