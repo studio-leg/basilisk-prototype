@@ -2,19 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CalibrationLightInteraction : BasiliskInteraction
+public class NoticeLightInteraction : BasiliskInteraction
 {
     public Transform headTransform;
     public SphereCollider lightCollider;
     [Range(0f, 10f)]
-    public float activeThreshold = 5f;
+    public float activeThreshold = 1f;
     
-    [Header("Sun")]
-    public Light mainLight;
-    public Vector3 lightRotMin = new Vector3(-6f, -212f, 90f);
-    public Vector3 lightRotMax = new Vector3(159.42f, -212f, 90f);
-    public MeshRenderer calibrationLightMesh;
-
     float timer = 0f;
     
 
@@ -32,10 +26,7 @@ public class CalibrationLightInteraction : BasiliskInteraction
                 percent = Mathf.Clamp01(timer / activeThreshold);
             }
         }
-
-        var rotation = Vector3.Lerp(lightRotMin, lightRotMax, percent);
-        mainLight.transform.rotation = Quaternion.Euler(rotation);
-        calibrationLightMesh.gameObject.SetActive(percent < 1);
+        
     }
 
     override public void Reset()

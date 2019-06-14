@@ -23,7 +23,7 @@ public class CalibrationHandsInteraction : BasiliskInteraction
     override protected void Update()
     {
         base.Update();
-        if (headTransform && handColliders.Length == 2)
+        if (isActive && headTransform && handColliders.Length == 2)
         {
             Ray ray = new Ray(headTransform.position, headTransform.forward);
             RaycastHit hitInfo;

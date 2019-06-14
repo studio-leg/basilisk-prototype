@@ -7,7 +7,9 @@ public class BasiliskInteraction : MonoBehaviour
     [Range(0f, 1f)]
     public float percent = 0f;
     public bool doReset = false;
-    
+
+    protected bool isActive = false;
+
     public delegate void InteractionCompleteAction();
     public event InteractionCompleteAction OnInteractionComplete;
 
@@ -19,20 +21,26 @@ public class BasiliskInteraction : MonoBehaviour
             doReset = false;
             Reset();
         }
+
+        if (isActive && percent >= 1f)
+        {
+            EndInteraction();
+        }
     }
 
     public virtual void BeginInteraction()
     {
+        isActive = true;
     }
 
     public virtual void EndInteraction()
     {
+        isActive = false;
         Debug.Log("End Interaction");
         OnInteractionComplete?.Invoke();
     }
 
     public virtual void Reset()
     {
-
     }
 }

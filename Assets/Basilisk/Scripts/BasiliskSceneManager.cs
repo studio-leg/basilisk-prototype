@@ -17,13 +17,21 @@ public class BasiliskSceneManager : MonoBehaviour
     int sceneEnvIndex = 0;
     int nextSceneEnvIndex = -1;
 
-
-    void Start()
+    private void Awake()
     {
         for (int i = 0; i < sceneEnvironments.Length; i++)
         {
+            sceneEnvironments[i].Activate(false);
             sceneEnvironments[i].OnNextScene += BasiliskSceneManager_OnNextScene;
         }
+    }
+
+    void Start()
+    {
+        Scene scene = (Scene)((int)activeScene);
+        sceneEnvIndex = GetEnvironmentIndex(scene);
+        sceneEnvironments[sceneEnvIndex].Activate(true);
+        sceneEnvironments[sceneEnvIndex].PlayIntro();
     }
 
     private void BasiliskSceneManager_OnNextScene()
@@ -42,7 +50,7 @@ public class BasiliskSceneManager : MonoBehaviour
     public void NextScene()
     {
         Scene scene = (Scene)((int)activeScene + 1);
-        PlayScene(scene);
+        CutToScene(scene);
     }
 
     /// <summary>

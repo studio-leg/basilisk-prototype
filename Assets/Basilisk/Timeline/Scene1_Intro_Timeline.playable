@@ -38,6 +38,24 @@ AnimationClip:
         weightedMode: 0
         inWeight: 0.5320031
         outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 98.51667
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 103.15
+        value: -20
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -66,7 +84,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 4.8166666
+    m_StopTime: 103.15
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -102,6 +120,24 @@ AnimationClip:
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.5320031
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 98.51667
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 103.15
+        value: -20
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
         outWeight: 0.33333334
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -270,7 +306,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
   m_Name: Signal Emitter
   m_EditorClassIdentifier: 
-  m_Time: 101.31666666666666
+  m_Time: 103.48333333333332
   m_Retroactive: 0
   m_EmitOnce: 0
   m_Asset: {fileID: 11400000, guid: a1d5ff73122974946811c4d531b82563, type: 2}
@@ -313,7 +349,7 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 0
+    m_Start: 2.1666666666666665
     m_ClipIn: 0
     m_Asset: {fileID: -701427547221708024}
     m_Duration: 22.648163265306124
@@ -382,7 +418,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: Scene01_Part01
   - m_Version: 1
-    m_Start: 23.233333333333334
+    m_Start: 25.400000000000006
     m_ClipIn: 0
     m_Asset: {fileID: 561065582164195481}
     m_Duration: 66.87346938775511
@@ -451,7 +487,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: Scene01_Part02
   - m_Version: 1
-    m_Start: 90.83333333333333
+    m_Start: 92.99999999999999
     m_ClipIn: 0
     m_Asset: {fileID: 9130596180128141398}
     m_Duration: 5.616326530612245
@@ -520,7 +556,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: Scene01_Part03
   - m_Version: 1
-    m_Start: 99.01666666666667
+    m_Start: 101.18333333333332
     m_ClipIn: 0
     m_Asset: {fileID: 4350099602694402696}
     m_Duration: 2.455510204081633

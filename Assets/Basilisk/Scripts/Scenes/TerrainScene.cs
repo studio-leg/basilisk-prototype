@@ -15,30 +15,27 @@ public class TerrainScene : BasiliskScene
     public float handsProgress = 0f;
     float handsProgress_ = 0f;
 
-    [Header("Calibration Light")]
-    CalibrationLightInteraction calibrationLightInteraction;
-
-    [Header("Hands")]
-    CalibrationHandsInteraction calibrationHandsInteraction;
+    [Header("Interactions")]
+    NoticeLightInteraction noticeLight;
+    CalibrationLightInteraction gazeAtLight;
+    CalibrationHandsInteraction gazeAtHands;
+    FoldInteraction folding;
     
     
     void Start()
     {
-        
+        noticeLight = GetComponent<NoticeLightInteraction>();
+        gazeAtLight = GetComponent<CalibrationLightInteraction>();
+        gazeAtHands = GetComponent<CalibrationHandsInteraction>();
+        folding = GetComponent<FoldInteraction>();
+        noticeLight.OnInteractionComplete += NoticeLight_OnInteractionComplete;
+        gazeAtLight.OnInteractionComplete += GazeAtLight_OnInteractionComplete;
+        gazeAtHands.OnInteractionComplete += GazeAtHands_OnInteractionComplete;
+        folding.OnInteractionComplete += Folding_OnInteractionComplete;
     }
     
     void Update()
     {
-        if (!calibrationLightInteraction)
-        {
-            calibrationLightInteraction = GetComponent<CalibrationLightInteraction>();
-        }
-
-        if (!calibrationHandsInteraction)
-        {
-            calibrationHandsInteraction = GetComponent<CalibrationHandsInteraction>();
-        }
-
         if (sunriseProgress != sunriseProgress_)
         {
             sunriseProgress_ = sunriseProgress;
@@ -49,9 +46,33 @@ public class TerrainScene : BasiliskScene
         }
     }
 
+    #region Interaction Complete Listeners
+    private void Folding_OnInteractionComplete()
+    {
+        EndFoldInteraction();
+    }
+
+    private void GazeAtHands_OnInteractionComplete()
+    {
+        EndHandInteraction();
+    }
+
+    private void GazeAtLight_OnInteractionComplete()
+    {
+        EndGazeLightInteraction();
+    }
+
+    private void NoticeLight_OnInteractionComplete()
+    {
+        EndNoticeLightInteraction();
+    }
+    #endregion
+
+    #region Interaction Controls
     public void StartNoticeLightInteraction()
     {
         director.Pause();
+        noticeLight.BeginInteraction();
     }
     public void EndNoticeLightInteraction()
     {
@@ -61,6 +82,7 @@ public class TerrainScene : BasiliskScene
     public void StartGazeLightInteraction()
     {
         director.Pause();
+        gazeAtLight.BeginInteraction();
     }
     public void EndGazeLightInteraction()
     {
@@ -70,6 +92,7 @@ public class TerrainScene : BasiliskScene
     public void StartHandInteraction()
     {
         director.Pause();
+        gazeAtHands.BeginInteraction();
     }
     public void EndHandInteraction()
     {
@@ -79,9 +102,12 @@ public class TerrainScene : BasiliskScene
     public void StartFoldInteraction()
     {
         director.Pause();
+        folding.BeginInteraction();
     }
     public void EndFoldInteraction()
     {
         director.Play();
     }
+    #endregion
+
 }

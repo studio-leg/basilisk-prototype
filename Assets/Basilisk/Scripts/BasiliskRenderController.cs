@@ -25,20 +25,24 @@ public class BasiliskRenderController : MonoBehaviour
     
     void Update()
     {
-        if (!director)
-        {
-            director = GetComponent<PlayableDirector>();
-        }
     }
 
     public void FadeIn()
     {
+        if (!director)
+        {
+            director = GetComponent<PlayableDirector>();
+        }
         director.Play(fadeInAsset);
     }
 
 
     public void FadeOut()
     {
+        if (!director)
+        {
+            director = GetComponent<PlayableDirector>();
+        }
         director.Play(fadeOutAsset);
     }
 
