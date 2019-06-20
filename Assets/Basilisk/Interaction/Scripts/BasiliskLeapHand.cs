@@ -75,11 +75,10 @@ namespace Basilisk
             if (isGrippingRemote && remoteTransform != null)
             {
                 remoteTarget.transform.position = rayCastTransform.position + (rayCastTransform.TransformDirection(rayCastDirection) * distanceToTarget) + remoteGripOffset;
-                var targetRigidBody = remoteTransform.GetComponent<Rigidbody>();
-                if (targetRigidBody)
+                var hingePillar = remoteTransform.GetComponent<GrabbableRemote>();
+                if (hingePillar)
                 {
-                    var direction = remoteTarget.transform.position - targetRigidBody.position;
-                    targetRigidBody.velocity = direction * force;
+                    hingePillar.MoveTowards(remoteTarget.transform.position, force);
                 }
 
                 if (lineRenderer)

@@ -49,8 +49,7 @@ public class MeshFold : MonoBehaviour
     public void Reset()
     {
         angle = 0;
-        hingeRigidBody.velocity = Vector3.zero;
-        hinge.transform.position = hingeHomePosition;
+        grabbable.Reset();
     }
 
     void UpdateFoldLine()

@@ -4,10 +4,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Experimental.VFX;
 
-public class FoldInteraction : BasiliskInteraction
+public class TreeFoldInteraction : BasiliskInteraction
 {
     public MeshFolder meshFolder;
-    public GrabbableRemote[] handles;
+    public SphereCollider[] handColliders;
     public int numInPlaceThreshold = 3;
 
     public BasiliskLeapHand leftHand;
@@ -49,10 +49,10 @@ public class FoldInteraction : BasiliskInteraction
         }
         else
         {
-            //leftHand.isActive = false;
-            //rightHand.isActive = false;
-            //leftHandVFX.SetFloat(handVFXScalePropName, 3f);
-            //rightHandVFX.SetFloat(handVFXScalePropName, 1f);
+            leftHand.isActive = false;
+            rightHand.isActive = false;
+            leftHandVFX.SetFloat(handVFXScalePropName, 3f);
+            rightHandVFX.SetFloat(handVFXScalePropName, 1f);
         }
     }
 
@@ -65,44 +65,13 @@ public class FoldInteraction : BasiliskInteraction
     override public void BeginInteraction()
     {
         base.BeginInteraction();
-        //meshFolder.Reset();
+        meshFolder.Reset();
         meshFolder.doUpdateMesh = true;
-        EnableHandles();
     }
 
     override public void EndInteraction()
     {
         base.EndInteraction();
-        //meshFolder.doUpdateMesh = false;
-        DisableHandles();
-    }
-
-    void EnableHandles()
-    {
-        var all = meshFolder.GetComponentsInChildren<GrabbableRemote>();
-        for (int i = 0; i < all.Length; i++)
-        {
-            all[i].active = false;
-        }
-        for (int i = 0; i < handles.Length; i++)
-        {
-            handles[i].active = true;
-        }
-    }
-
-    void DisableHandles()
-    {
-        for (int i = 0; i < handles.Length; i++)
-        {
-            handles[i].active = false;
-        }
-    }
-
-    public void HandlesToHome()
-    {
-        for (int i = 0; i < handles.Length; i++)
-        {
-            handles[i].ForceHome = true;
-        }
+        meshFolder.doUpdateMesh = false;
     }
 }

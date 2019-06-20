@@ -18,26 +18,17 @@ public class TerrainScene : BasiliskScene
     [Header("Interactions")]
     NoticeLightInteraction noticeLight;
     CalibrationLightInteraction gazeAtLight;
-    CalibrationHandsInteraction gazeAtHands;
-    FoldInteraction folding;
-    
-    
+    public CalibrationHandsInteraction gazeAtHands;
+    public FoldInteraction treeFolding;
+    public FoldInteraction folding;
+
     void Start()
     {
-        noticeLight = GetComponent<NoticeLightInteraction>();
-        gazeAtLight = GetComponent<CalibrationLightInteraction>();
-        gazeAtHands = GetComponent<CalibrationHandsInteraction>();
-        folding = GetComponent<FoldInteraction>();
-        if (noticeLight)
-        {
-            noticeLight.OnInteractionComplete += NoticeLight_OnInteractionComplete;
-        }
-        if (gazeAtLight)
-        {
-            gazeAtLight.OnInteractionComplete += GazeAtLight_OnInteractionComplete;
-        }
-        gazeAtHands.OnInteractionComplete += GazeAtHands_OnInteractionComplete;
-        folding.OnInteractionComplete += Folding_OnInteractionComplete;
+        if (noticeLight) noticeLight.OnInteractionComplete += NoticeLight_OnInteractionComplete;
+        if (gazeAtLight) gazeAtLight.OnInteractionComplete += GazeAtLight_OnInteractionComplete;
+        if (gazeAtHands) gazeAtHands.OnInteractionComplete += GazeAtHands_OnInteractionComplete;
+        if (folding) folding.OnInteractionComplete += Folding_OnInteractionComplete;
+        if (treeFolding) treeFolding.OnInteractionComplete += TreeFolding_OnInteractionComplete;
     }
     
     void Update()
@@ -53,6 +44,11 @@ public class TerrainScene : BasiliskScene
     }
 
     #region Interaction Complete Listeners
+    private void TreeFolding_OnInteractionComplete()
+    {
+        EndFoldTreeInteraction();
+    }
+
     private void Folding_OnInteractionComplete()
     {
         EndFoldInteraction();
@@ -97,12 +93,26 @@ public class TerrainScene : BasiliskScene
 
     public void StartHandInteraction()
     {
-        director.Pause();
+        //director.Pause();
         gazeAtHands.BeginInteraction();
     }
     public void EndHandInteraction()
     {
         director.Play();
+    }
+
+    public void StartFoldTreeInteraction()
+    {
+        director.Pause();
+        treeFolding.BeginInteraction();
+    }
+    public void EndFoldTreeInteraction()
+    {
+        director.Play();
+    }
+    public void TreeToHome()
+    {
+        treeFolding.HandlesToHome();
     }
 
     public void StartFoldInteraction()
