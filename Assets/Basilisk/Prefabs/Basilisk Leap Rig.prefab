@@ -79,7 +79,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 484375481386212185}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1.6, z: -9.81}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -324,7 +324,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clearColorMode: 0
-  backgroundColorHDR: {r: 0.025, g: 0.07, b: 0.19, a: 0}
+  backgroundColorHDR: {r: 0, g: 0, b: 0, a: 0}
   clearDepth: 1
   volumeLayerMask:
     serializedVersion: 2
@@ -1286,6 +1286,9 @@ MonoBehaviour:
   force: 1
   rayCastTransform: {fileID: 479818306507274078}
   rayCastDirection: {x: 1, y: 0, z: 0}
+  isActive: 0
+  raycastHit: 0
+  isGrippingRemote: 0
 --- !u!120 &485304283409379692
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -1293,7 +1296,7 @@ LineRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 485304283409379694}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -2030,6 +2033,9 @@ MonoBehaviour:
   force: 1
   rayCastTransform: {fileID: 479844568901144096}
   rayCastDirection: {x: -1, y: 0, z: 0}
+  isActive: 0
+  raycastHit: 0
+  isGrippingRemote: 0
 --- !u!120 &485494131155299510
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -2037,7 +2043,7 @@ LineRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 485494131155299504}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1

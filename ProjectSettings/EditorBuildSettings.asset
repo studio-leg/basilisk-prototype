@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: cbfe36cfddfde964d9dfce63a355d5dd
+    path: Assets/Basilisk/Scenes/Basilisk Master.unity
+    guid: d8ae2fae14842974e87fbf795cf2ce7f
   m_configObjects: {}

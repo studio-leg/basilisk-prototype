@@ -28,8 +28,14 @@ public class TerrainScene : BasiliskScene
         gazeAtLight = GetComponent<CalibrationLightInteraction>();
         gazeAtHands = GetComponent<CalibrationHandsInteraction>();
         folding = GetComponent<FoldInteraction>();
-        noticeLight.OnInteractionComplete += NoticeLight_OnInteractionComplete;
-        gazeAtLight.OnInteractionComplete += GazeAtLight_OnInteractionComplete;
+        if (noticeLight)
+        {
+            noticeLight.OnInteractionComplete += NoticeLight_OnInteractionComplete;
+        }
+        if (gazeAtLight)
+        {
+            gazeAtLight.OnInteractionComplete += GazeAtLight_OnInteractionComplete;
+        }
         gazeAtHands.OnInteractionComplete += GazeAtHands_OnInteractionComplete;
         folding.OnInteractionComplete += Folding_OnInteractionComplete;
     }
