@@ -91,6 +91,11 @@ public class BasiliskScene : MonoBehaviour
         OnOutroComplete?.Invoke();
     }
 
+    public void Pause()
+    {
+        director.Pause();
+    }
+
     public void NextScene()
     {
         OnNextScene?.Invoke();

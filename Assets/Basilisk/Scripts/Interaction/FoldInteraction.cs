@@ -10,6 +10,17 @@ public class FoldInteraction : BasiliskInteraction
     public GrabbableRemote[] handles;
     public int numInPlaceThreshold = 3;
 
+    [Header("Audio")]
+    public AudioSource audioAffirm;
+    public AudioSource audioPrompt;
+    public AudioClip audioTakeHold;
+    public AudioClip audioThereEasy;
+    public AudioClip audioExtendArms;
+    public AudioClip audioGrabLift;
+    bool hasPlayedAudioTakeHold = false;
+    bool hasPlayedAudioThereEasy = false;
+
+    [Header("Hands")]
     public BasiliskLeapHand leftHand;
     public BasiliskLeapHand rightHand;
     public VisualEffect leftHandVFX;
@@ -30,8 +41,10 @@ public class FoldInteraction : BasiliskInteraction
         {
             leftHand.isActive = true;
             rightHand.isActive = true;
+            bool eitherHit = false;
             if (leftHand.raycastHit)
             {
+                eitherHit = true;
                 leftHandVFX.SetFloat(handVFXScalePropName, 3f);
             }
             else
@@ -40,12 +53,33 @@ public class FoldInteraction : BasiliskInteraction
             }
             if (rightHand.raycastHit)
             {
+                eitherHit = true;
                 rightHandVFX.SetFloat(handVFXScalePropName, 3f);
             }
             else
             {
                 rightHandVFX.SetFloat(handVFXScalePropName, 1f);
             }
+
+            if (audioAffirm)
+            {
+
+                if (eitherHit && !hasPlayedAudioTakeHold)
+                {
+                    hasPlayedAudioTakeHold = true;
+                    audioAffirm.clip = audioTakeHold;
+                    audioAffirm.Play();
+                }
+
+                bool eitherGrabbing = (leftHand.isGrippingRemote || rightHand.isGrippingRemote);
+                if (eitherGrabbing && !hasPlayedAudioThereEasy && !audioAffirm.isPlaying)
+                {
+                    hasPlayedAudioThereEasy = true;
+                    audioAffirm.clip = audioThereEasy;
+                    audioAffirm.Play();
+                }
+            }
+
         }
         else
         {
@@ -58,6 +92,8 @@ public class FoldInteraction : BasiliskInteraction
 
     override public void Reset()
     {
+        hasPlayedAudioThereEasy = false;
+        hasPlayedAudioTakeHold = false;
         timer = percent = 0f;
         meshFolder.Reset();
     }

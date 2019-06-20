@@ -73,37 +73,30 @@ public class TerrainScene : BasiliskScene
     #region Interaction Controls
     public void StartNoticeLightInteraction()
     {
-        director.Pause();
         noticeLight.BeginInteraction();
     }
     public void EndNoticeLightInteraction()
     {
-        director.Play();
     }
 
     public void StartGazeLightInteraction()
     {
-        director.Pause();
         gazeAtLight.BeginInteraction();
     }
     public void EndGazeLightInteraction()
     {
-        director.Play();
     }
 
     public void StartHandInteraction()
     {
-        //director.Pause();
         gazeAtHands.BeginInteraction();
     }
     public void EndHandInteraction()
     {
-        director.Play();
     }
 
     public void StartFoldTreeInteraction()
     {
-        director.Pause();
         treeFolding.BeginInteraction();
     }
     public void EndFoldTreeInteraction()
@@ -117,7 +110,6 @@ public class TerrainScene : BasiliskScene
 
     public void StartFoldInteraction()
     {
-        director.Pause();
         folding.BeginInteraction();
     }
     public void EndFoldInteraction()
