@@ -14,11 +14,13 @@ public class GrabbableRemote : MonoBehaviour
     private Rigidbody rigidBody;
     public float force = 10f;
     public bool active = false;
+    FoldActivation foldActivation;
 
     void Start()
     {
         homePosition = transform.position;
         rigidBody = GetComponent<Rigidbody>();
+        foldActivation = GetComponentInChildren<FoldActivation>();
         var hingRenderer = GetComponent<MeshRenderer>();
         hingeMaterial = hingRenderer.material;
     }
@@ -33,6 +35,10 @@ public class GrabbableRemote : MonoBehaviour
             {
                 ForceHome = false;
             }
+        }
+        if (foldActivation)
+        {
+            isInPlace = foldActivation.isInPlace;
         }
         if (isInPlace)
         {
@@ -61,28 +67,6 @@ public class GrabbableRemote : MonoBehaviour
             rigidBody.velocity = direction * force;
         }
     }
-
-    void OnCollisionEnter(Collision collision)
-    {
-        Debug.Log("Monolith collision");
-    }
-
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.GetComponent<FoldTarget>())
-        {
-            Debug.Log("Monolith trigger");
-            isInPlace = true;
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.GetComponent<FoldTarget>())
-        {
-            Debug.Log("Monolith trigger Exit");
-            isInPlace = false;
-        }
-    }
+    
 
 }
