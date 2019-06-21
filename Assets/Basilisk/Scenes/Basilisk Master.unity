@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 1.0810049, g: 0.91851777, b: 0.701303, a: 1}
+  m_IndirectSpecularColor: {r: 0.016548503, g: 0.01974205, b: 0.011434875, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -881,41 +881,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4487ab117ae01647bbe312d47c65f21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!84 &185715326
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  serializedVersion: 3
-  m_Width: 64
-  m_Height: 64
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthFormat: 0
-  m_ColorFormat: 48
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 3
-  m_VolumeDepth: 64
 --- !u!4 &239378675 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4210436473178998, guid: c2ea4d4e8289b8345a402f7325ea2f9d,
@@ -1170,6 +1135,41 @@ Material:
     - _UVDetailsMappingMask: {r: 1, g: 0, b: 0, a: 0}
     - _UVMappingMask: {r: 1, g: 0, b: 0, a: 0}
     - _UVMappingMaskEmissive: {r: 1, g: 0, b: 0, a: 0}
+--- !u!84 &325302066
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  serializedVersion: 3
+  m_Width: 64
+  m_Height: 64
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthFormat: 0
+  m_ColorFormat: 48
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 3
+  m_VolumeDepth: 64
 --- !u!4 &357605296 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4078991679938082, guid: d8e881e641dc9434c801764aff8d2887,
@@ -2295,7 +2295,7 @@ VFXRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 761085967}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -2367,7 +2367,7 @@ VisualEffect:
       m_Array: []
     m_NamedObject:
       m_Array:
-      - m_Value: {fileID: 1667193928}
+      - m_Value: {fileID: 995497353}
         m_Name: Texture3D
         m_Overridden: 1
     m_Bool:
@@ -3195,7 +3195,7 @@ VFXRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 942486081}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -3869,25 +3869,7 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 8267466702752428}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1038972466 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4777436316330296, guid: a9480ff45f1ddf64c8f947d212371f76,
-    type: 3}
-  m_PrefabInstance: {fileID: 8267467081534375}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1049730271 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4724270583153758, guid: dfde9be721342b845a0e3e575572d987,
-    type: 3}
-  m_PrefabInstance: {fileID: 8267466766864042}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1054838398 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4777436316330296, guid: a9480ff45f1ddf64c8f947d212371f76,
-    type: 3}
-  m_PrefabInstance: {fileID: 8267467963027569}
-  m_PrefabAsset: {fileID: 0}
---- !u!84 &1103626005
+--- !u!84 &995497353
 RenderTexture:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3922,6 +3904,24 @@ RenderTexture:
     m_WrapW: 1
   m_Dimension: 3
   m_VolumeDepth: 64
+--- !u!4 &1038972466 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4777436316330296, guid: a9480ff45f1ddf64c8f947d212371f76,
+    type: 3}
+  m_PrefabInstance: {fileID: 8267467081534375}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1049730271 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4724270583153758, guid: dfde9be721342b845a0e3e575572d987,
+    type: 3}
+  m_PrefabInstance: {fileID: 8267466766864042}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1054838398 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4777436316330296, guid: a9480ff45f1ddf64c8f947d212371f76,
+    type: 3}
+  m_PrefabInstance: {fileID: 8267467963027569}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1112363689 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4137991391306542, guid: 567cfa7d997e1c54193c71f3eba90c24,
@@ -4260,6 +4260,10 @@ PlayableDirector:
   m_SceneBindings:
   - key: {fileID: 7309022225538195618, guid: 363e4aca5971a3748b38aef1b87a7aad, type: 2}
     value: {fileID: 1155808484}
+  - key: {fileID: 4338547201146066448, guid: 363e4aca5971a3748b38aef1b87a7aad, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -1148506727421503402, guid: 363e4aca5971a3748b38aef1b87a7aad, type: 2}
+    value: {fileID: 0}
   m_ExposedReferences:
     m_References: []
 --- !u!114 &1155808486
@@ -4274,7 +4278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 168effe97be73d947ac8616c5bee7808, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Exposure: -20
+  Exposure: 0
   ExposureDefault: 20
   volume: {fileID: 11400000, guid: 6fc37e664b86e7542b7d5b1e94e5e5f6, type: 2}
 --- !u!4 &1173026282 stripped
@@ -4322,7 +4326,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1178367974}
   m_LocalRotation: {x: 0, y: 0.3189593, z: 0, w: 0.94776845}
-  m_LocalPosition: {x: 0, y: 2, z: 4.7511854}
+  m_LocalPosition: {x: 0, y: 2, z: 3.5194845}
   m_LocalScale: {x: 1, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 7229943984701852482}
@@ -4608,7 +4612,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2efd48269aeb44043966b9b751461dfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeScene: 1
+  activeScene: 2
   sceneEnvironments:
   - {fileID: 1693025810755646529}
   - {fileID: 8267467140210998}
@@ -4691,41 +4695,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 8267466355758068}
   m_PrefabAsset: {fileID: 0}
---- !u!84 &1667193928
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  serializedVersion: 3
-  m_Width: 64
-  m_Height: 64
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthFormat: 0
-  m_ColorFormat: 48
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 3
-  m_VolumeDepth: 64
 --- !u!4 &1719683474 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4901136145748118, guid: 9c5a348d269873a4298c4cf0297805d9,
@@ -5226,41 +5195,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 8267467300500838}
   m_PrefabAsset: {fileID: 0}
---- !u!84 &1969975559
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  serializedVersion: 3
-  m_Width: 64
-  m_Height: 64
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthFormat: 0
-  m_ColorFormat: 48
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 3
-  m_VolumeDepth: 64
 --- !u!95 &1974244685
 Animator:
   serializedVersion: 3
@@ -5529,7 +5463,8 @@ Light:
   m_BounceIntensity: 0
   m_ColorTemperature: 5500
   m_UseColorTemperature: 1
-  m_BoundingSphereOverride: {x: 3.513e-42, y: 1.02e-43, z: -6.9e-44, w: 0}
+  m_BoundingSphereOverride: {x: 4.5449518e+30, y: 2.621881e+20, z: 4.5026527e+30,
+    w: 0.00090188434}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -5540,7 +5475,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8267466304247901}
-  m_LocalRotation: {x: -0.38337934, y: -0.010269955, z: 0.5941551, w: -0.70703226}
+  m_LocalRotation: {x: -0.6685827, y: -0.6889837, z: -0.23021138, w: -0.15906443}
   m_LocalPosition: {x: 0, y: 39, z: -46.58}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -5641,7 +5576,7 @@ VFXRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8267466309181897}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -5742,7 +5677,7 @@ VisualEffect:
       m_Array: []
     m_NamedObject:
       m_Array:
-      - m_Value: {fileID: 1103626005}
+      - m_Value: {fileID: 325302066}
         m_Name: Texture3D
         m_Overridden: 1
     m_Bool:
@@ -9627,7 +9562,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &8267467225877248
 GameObject:
   m_ObjectHideFlags: 0
@@ -14027,7 +13962,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: {x: 0, y: 0, z: 0}
   angle: 0
-  colour: {r: 0.73039365, g: 0.05772225, b: 0.41693676, a: 1}
+  colour: {r: 0.040476665, g: 0.68457395, b: 0.64222354, a: 1}
   useHinge: 1
   isInPlace: 0
   animationEnabled: 0
@@ -14074,7 +14009,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: {x: 0, y: 0, z: 0}
   angle: 0
-  colour: {r: 0.14344718, g: 0.3967731, b: 0.7608316, a: 1}
+  colour: {r: 0.28113198, g: 0.7258222, b: 0.420737, a: 1}
   useHinge: 1
   isInPlace: 0
   animationEnabled: 0
@@ -14302,7 +14237,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isInPlace: 0
   ForceHome: 0
-  force: 10
+  force: 2
   active: 0
 --- !u!1 &1637160906432067310
 GameObject:
@@ -16279,7 +16214,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: {x: 0, y: 0, z: 0}
   angle: 0
-  colour: {r: 0.3431279, g: 0.7656722, b: 0.43752787, a: 1}
+  colour: {r: 0.28766853, g: 0.5230013, b: 0.80106616, a: 1}
   useHinge: 1
   isInPlace: 0
   animationEnabled: 0
@@ -16367,14 +16302,14 @@ MonoBehaviour:
   executeInEditMode: 1
   JFAImplementation: {fileID: 7200000, guid: 3c29260ac4ca05f4780f9a4c44f20268, type: 3}
   MtVImplementation: {fileID: 7200000, guid: 39d9f785515d9ba49a5753410e0020fb, type: 3}
-  outputRenderTexture: {fileID: 1103626005}
+  outputRenderTexture: {fileID: 0}
   mesh: {fileID: 141346115}
   skinnedMeshRenderer: {fileID: 973177457}
   materialOutput: {fileID: 2100000, guid: 92f7ad2f404ea904ba517bfd0b0d54ca, type: 2}
   materialProperty: _Texture3D
   vfxOutput: {fileID: 8267466309181903}
   vfxProperty: Texture3D
-  fieldsChanged: 0
+  fieldsChanged: 1
   sdfResolution: 64
   offset: {x: 0.5, y: 0.5, z: 0.5}
   scaleBy: 0.5
@@ -16426,14 +16361,14 @@ MonoBehaviour:
   executeInEditMode: 1
   JFAImplementation: {fileID: 7200000, guid: 3c29260ac4ca05f4780f9a4c44f20268, type: 3}
   MtVImplementation: {fileID: 7200000, guid: 39d9f785515d9ba49a5753410e0020fb, type: 3}
-  outputRenderTexture: {fileID: 1667193928}
+  outputRenderTexture: {fileID: 0}
   mesh: {fileID: 614555679}
   skinnedMeshRenderer: {fileID: 973177460}
   materialOutput: {fileID: 2100000, guid: 92f7ad2f404ea904ba517bfd0b0d54ca, type: 2}
   materialProperty: _Texture3D
   vfxOutput: {fileID: 761085963}
   vfxProperty: Texture3D
-  fieldsChanged: 0
+  fieldsChanged: 1
   sdfResolution: 64
   offset: {x: 0.5, y: 0.5, z: 0.5}
   scaleBy: 0.5
@@ -16769,7 +16704,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: {x: 0, y: 0, z: 0}
   angle: 0
-  colour: {r: 0.87293386, g: 0.04600641, b: 0.19952302, a: 1}
+  colour: {r: 0.5458611, g: 0.42268592, b: 0.9150279, a: 1}
   useHinge: 1
   isInPlace: 0
   animationEnabled: 0
@@ -16974,7 +16909,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: {x: 0, y: 0, z: 0}
   angle: 0
-  colour: {r: 0.05165904, g: 0.587401, b: 0.07755046, a: 1}
+  colour: {r: 0.935292, g: 0.3797161, b: 0.26148558, a: 1}
   useHinge: 1
   isInPlace: 0
   animationEnabled: 0
@@ -17204,7 +17139,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: {x: 0, y: 0, z: 0}
   angle: 0
-  colour: {r: 0.8744788, g: 0.34137052, b: 0.354666, a: 1}
+  colour: {r: 0.8228208, g: 0.2742444, b: 0.48471138, a: 1}
   useHinge: 1
   isInPlace: 0
   animationEnabled: 0
@@ -17307,7 +17242,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7229943984701852482
 Transform:
   m_ObjectHideFlags: 0
@@ -18580,7 +18515,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: {x: 0, y: 0, z: 0}
   angle: 0
-  colour: {r: 0.22177197, g: 0.3028951, b: 0.64516747, a: 1}
+  colour: {r: 0.31236714, g: 0.8212658, b: 0.12530974, a: 1}
   useHinge: 1
   isInPlace: 0
   animationEnabled: 0
