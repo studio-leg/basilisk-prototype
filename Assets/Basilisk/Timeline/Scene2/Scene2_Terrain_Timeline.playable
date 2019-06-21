@@ -100,7 +100,7 @@ AnimationClip:
         inWeight: 0.35069543
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 61.85
+        time: 65.03333
         value: 0
         inSlope: 0
         outSlope: 0
@@ -109,7 +109,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 67
+        time: 70.183334
         value: 9.54
         inSlope: 0
         outSlope: 0
@@ -178,7 +178,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 67
+    m_StopTime: 70.183334
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -216,7 +216,7 @@ AnimationClip:
         inWeight: 0.35069543
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 61.85
+        time: 65.03333
         value: 0
         inSlope: 0
         outSlope: 0
@@ -225,7 +225,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 67
+        time: 70.183334
         value: 9.54
         inSlope: 0
         outSlope: 0
@@ -425,7 +425,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Time: 58.0521768707483
+  m_Time: 64.68727891156462
   m_Retroactive: 0
   m_EmitOnce: 0
   m_Asset: {fileID: 11400000, guid: ed5244d0afdcbfd43aa68f60f2844dd2, type: 2}
@@ -540,7 +540,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
   m_Name: Signal Emitter
   m_EditorClassIdentifier: 
-  m_Time: 68.08333333333333
+  m_Time: 69.75
   m_Retroactive: 0
   m_EmitOnce: 0
   m_Asset: {fileID: 11400000, guid: a1d5ff73122974946811c4d531b82563, type: 2}
@@ -633,7 +633,7 @@ MonoBehaviour:
     m_Start: 35.11666666666667
     m_ClipIn: 0
     m_Asset: {fileID: 4141422818575474718}
-    m_Duration: 22.935510204081634
+    m_Duration: 29.57061224489795
     m_TimeScale: 1
     m_ParentTrack: {fileID: 6771918403379381994}
     m_EaseInDuration: 0
@@ -749,7 +749,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Time: 60.05
+  m_Time: 65.11666666666666
   m_Retroactive: 0
   m_EmitOnce: 0
   m_Asset: {fileID: 11400000, guid: 4e754dc53067743468c910001b3bc16d, type: 2}
