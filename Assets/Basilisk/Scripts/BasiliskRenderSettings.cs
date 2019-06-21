@@ -9,7 +9,8 @@ using UnityEngine.Rendering;
 public class BasiliskRenderSettings : MonoBehaviour
 {
     [Header("Controls")]
-    public float Exposure = 0;
+    public float Exposure = 0f;
+    public float ExposureDefault = -20f;
 
     [Header("Params")]
     public VolumeProfile volume;
@@ -20,6 +21,11 @@ public class BasiliskRenderSettings : MonoBehaviour
     {
     }
     
+    public void Reset()
+    {
+        Exposure = ExposureDefault;
+    }
+
     void Update()
     {
         if (volume)

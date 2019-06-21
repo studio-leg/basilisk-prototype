@@ -36,7 +36,7 @@ public class BasiliskInteraction : MonoBehaviour
     public virtual void EndInteraction()
     {
         isActive = false;
-        Debug.Log("End Interaction");
+        //Debug.Log("End Interaction");
         OnInteractionComplete?.Invoke();
     }
 

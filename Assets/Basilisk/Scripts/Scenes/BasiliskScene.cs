@@ -11,6 +11,7 @@ public class BasiliskScene : MonoBehaviour
     bool isActive_ = true;
     public GameObject sceneAssets;
     BasiliskRenderController renderController;
+    BasiliskRenderSettings renderSettings;
     public PlayableDirector director;
     
     [Header("Timeline")]
@@ -42,11 +43,6 @@ public class BasiliskScene : MonoBehaviour
 
     public virtual void Activate(bool active)
     {
-        if (!sceneAssets)
-        {
-            sceneAssets = GetComponentInChildren<BasiliskSceneAssets>(true).gameObject;
-        }
-        sceneAssets.SetActive(active);
         if (active)
         {
             director.Play(sceneTimeline);
@@ -54,7 +50,14 @@ public class BasiliskScene : MonoBehaviour
         else
         {
             director.Stop();
+            renderSettings = GetComponent<BasiliskRenderSettings>();
+            if (renderSettings) renderSettings.Reset();
         }
+        if (!sceneAssets)
+        {
+            sceneAssets = GetComponentInChildren<BasiliskSceneAssets>(true).gameObject;
+        }
+        sceneAssets.SetActive(active);
     }
 
     public virtual void PlayIntro()

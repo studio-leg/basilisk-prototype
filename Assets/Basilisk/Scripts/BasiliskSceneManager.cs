@@ -45,6 +45,18 @@ public class BasiliskSceneManager : MonoBehaviour
         {
             NextScene();
         }
+        if (Input.GetKeyDown("1"))
+        {
+            CutToScene(Scene.Intro);
+        }
+        if (Input.GetKeyDown("2"))
+        {
+            CutToScene(Scene.Terrain);
+        }
+        if (Input.GetKeyDown("3"))
+        {
+            CutToScene(Scene.Emancipation);
+        }
     }
 
     public void NextScene()

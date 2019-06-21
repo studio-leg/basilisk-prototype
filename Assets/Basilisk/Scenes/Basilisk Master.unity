@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 1.0821178, g: 0.9120166, b: 0.69552225, a: 1}
+  m_IndirectSpecularColor: {r: 1.0810049, g: 0.91851777, b: 0.701303, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -621,7 +621,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 168effe97be73d947ac8616c5bee7808, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Exposure: 0
+  Exposure: -20
+  ExposureDefault: -20
   volume: {fileID: 11400000, guid: dab0766de4a4b5349b80ce1a86555414, type: 2}
 --- !u!1 &76419257 stripped
 GameObject:
@@ -880,6 +881,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4487ab117ae01647bbe312d47c65f21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!84 &185715326
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  serializedVersion: 3
+  m_Width: 64
+  m_Height: 64
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthFormat: 0
+  m_ColorFormat: 48
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 3
+  m_VolumeDepth: 64
 --- !u!4 &239378675 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4210436473178998, guid: c2ea4d4e8289b8345a402f7325ea2f9d,
@@ -1134,41 +1170,6 @@ Material:
     - _UVDetailsMappingMask: {r: 1, g: 0, b: 0, a: 0}
     - _UVMappingMask: {r: 1, g: 0, b: 0, a: 0}
     - _UVMappingMaskEmissive: {r: 1, g: 0, b: 0, a: 0}
---- !u!84 &328470100
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  serializedVersion: 3
-  m_Width: 64
-  m_Height: 64
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthFormat: 0
-  m_ColorFormat: 48
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 3
-  m_VolumeDepth: 64
 --- !u!4 &357605296 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4078991679938082, guid: d8e881e641dc9434c801764aff8d2887,
@@ -1305,7 +1306,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 168effe97be73d947ac8616c5bee7808, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Exposure: -13.197565
+  Exposure: -20
+  ExposureDefault: -20
   volume: {fileID: 11400000, guid: e2ae96a3238afe149adf27efb0d2b0ea, type: 2}
 --- !u!1 &423253910
 GameObject:
@@ -1605,7 +1607,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 445282079}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 0}
   m_CullingMode: 0
@@ -1623,7 +1625,7 @@ PlayableDirector:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 445282079}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: 4e1803e5e6d77ff43bf168b6f19e1f76, type: 2}
   m_InitialState: 0
@@ -1653,7 +1655,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 168effe97be73d947ac8616c5bee7808, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Exposure: -15
+  Exposure: -7.2017937
+  ExposureDefault: -20
   volume: {fileID: 11400000, guid: a8b3a0fcb0a0dfb4f81d5e7655baa8e0, type: 2}
 --- !u!114 &445282084
 MonoBehaviour:
@@ -2220,41 +2223,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 8267468403323004}
   m_PrefabAsset: {fileID: 0}
---- !u!84 &647466857
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  serializedVersion: 3
-  m_Width: 64
-  m_Height: 64
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthFormat: 0
-  m_ColorFormat: 48
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 3
-  m_VolumeDepth: 64
 --- !u!4 &657568590 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4261334276587894, guid: a9e485fcde087724196a12429816d848,
@@ -2399,7 +2367,7 @@ VisualEffect:
       m_Array: []
     m_NamedObject:
       m_Array:
-      - m_Value: {fileID: 647466857}
+      - m_Value: {fileID: 1667193928}
         m_Name: Texture3D
         m_Overridden: 1
     m_Bool:
@@ -3919,7 +3887,7 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 8267467963027569}
   m_PrefabAsset: {fileID: 0}
---- !u!84 &1063278139
+--- !u!84 &1103626005
 RenderTexture:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4306,7 +4274,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 168effe97be73d947ac8616c5bee7808, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Exposure: 0
+  Exposure: -20
+  ExposureDefault: 20
   volume: {fileID: 11400000, guid: 6fc37e664b86e7542b7d5b1e94e5e5f6, type: 2}
 --- !u!4 &1173026282 stripped
 Transform:
@@ -4353,7 +4322,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1178367974}
   m_LocalRotation: {x: 0, y: 0.3189593, z: 0, w: 0.94776845}
-  m_LocalPosition: {x: 0, y: 2, z: -8}
+  m_LocalPosition: {x: 0, y: 2, z: 4.7511854}
   m_LocalScale: {x: 1, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 7229943984701852482}
@@ -4430,41 +4399,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 8267466894070519}
   m_PrefabAsset: {fileID: 0}
---- !u!84 &1203367535
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  serializedVersion: 3
-  m_Width: 64
-  m_Height: 64
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthFormat: 0
-  m_ColorFormat: 48
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 3
-  m_VolumeDepth: 64
 --- !u!4 &1211529063 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4575110378196318, guid: 0be13c9bcf075944e97319b255131a9c,
@@ -4757,6 +4691,41 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 8267466355758068}
   m_PrefabAsset: {fileID: 0}
+--- !u!84 &1667193928
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  serializedVersion: 3
+  m_Width: 64
+  m_Height: 64
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthFormat: 0
+  m_ColorFormat: 48
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 3
+  m_VolumeDepth: 64
 --- !u!4 &1719683474 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4901136145748118, guid: 9c5a348d269873a4298c4cf0297805d9,
@@ -5257,6 +5226,41 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 8267467300500838}
   m_PrefabAsset: {fileID: 0}
+--- !u!84 &1969975559
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  serializedVersion: 3
+  m_Width: 64
+  m_Height: 64
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthFormat: 0
+  m_ColorFormat: 48
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 3
+  m_VolumeDepth: 64
 --- !u!95 &1974244685
 Animator:
   serializedVersion: 3
@@ -5525,7 +5529,7 @@ Light:
   m_BounceIntensity: 0
   m_ColorTemperature: 5500
   m_UseColorTemperature: 1
-  m_BoundingSphereOverride: {x: 2.8595e-41, y: 1.02e-43, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 3.513e-42, y: 1.02e-43, z: -6.9e-44, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -5536,7 +5540,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8267466304247901}
-  m_LocalRotation: {x: -0.36946228, y: 0.006170525, z: 0.6029076, w: -0.7070799}
+  m_LocalRotation: {x: -0.38337934, y: -0.010269955, z: 0.5941551, w: -0.70703226}
   m_LocalPosition: {x: 0, y: 39, z: -46.58}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -5738,7 +5742,7 @@ VisualEffect:
       m_Array: []
     m_NamedObject:
       m_Array:
-      - m_Value: {fileID: 328470100}
+      - m_Value: {fileID: 1103626005}
         m_Name: Texture3D
         m_Overridden: 1
     m_Bool:
@@ -7422,6 +7426,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 26
       objectReference: {fileID: 0}
+    - target: {fileID: 205794193484539994, guid: dec4adc414496c14aa11373481c60070,
+        type: 3}
+      propertyPath: m_FadeMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4533325388599674, guid: dec4adc414496c14aa11373481c60070, type: 3}
       propertyPath: m_LocalRotation.x
       value: -0.7880108
@@ -7453,11 +7462,6 @@ PrefabInstance:
     - target: {fileID: 4533325388599674, guid: dec4adc414496c14aa11373481c60070, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: -104
-      objectReference: {fileID: 0}
-    - target: {fileID: 205794193484539994, guid: dec4adc414496c14aa11373481c60070,
-        type: 3}
-      propertyPath: m_FadeMode
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dec4adc414496c14aa11373481c60070, type: 3}
@@ -12144,6 +12148,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 120
       objectReference: {fileID: 0}
+    - target: {fileID: 205760753816005992, guid: c2ea4d4e8289b8345a402f7325ea2f9d,
+        type: 3}
+      propertyPath: m_FadeMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4762407878230008, guid: c2ea4d4e8289b8345a402f7325ea2f9d, type: 3}
       propertyPath: m_LocalRotation.x
       value: -0.7071068
@@ -12174,11 +12183,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4762407878230008, guid: c2ea4d4e8289b8345a402f7325ea2f9d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 205760753816005992, guid: c2ea4d4e8289b8345a402f7325ea2f9d,
-        type: 3}
-      propertyPath: m_FadeMode
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -12576,6 +12580,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 60
       objectReference: {fileID: 0}
+    - target: {fileID: 205760753816005992, guid: c2ea4d4e8289b8345a402f7325ea2f9d,
+        type: 3}
+      propertyPath: m_FadeMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4762407878230008, guid: c2ea4d4e8289b8345a402f7325ea2f9d, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
@@ -12583,11 +12592,6 @@ PrefabInstance:
     - target: {fileID: 1097395433516480, guid: c2ea4d4e8289b8345a402f7325ea2f9d, type: 3}
       propertyPath: m_IsActive
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 205760753816005992, guid: c2ea4d4e8289b8345a402f7325ea2f9d,
-        type: 3}
-      propertyPath: m_FadeMode
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2ea4d4e8289b8345a402f7325ea2f9d, type: 3}
@@ -14023,7 +14027,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: {x: 0, y: 0, z: 0}
   angle: 0
-  colour: {r: 0.23938209, g: 0.5355176, b: 0.2526595, a: 1}
+  colour: {r: 0.73039365, g: 0.05772225, b: 0.41693676, a: 1}
   useHinge: 1
   isInPlace: 0
   animationEnabled: 0
@@ -14070,7 +14074,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: {x: 0, y: 0, z: 0}
   angle: 0
-  colour: {r: 0.75047565, g: 0.06515446, b: 0.4994176, a: 1}
+  colour: {r: 0.14344718, g: 0.3967731, b: 0.7608316, a: 1}
   useHinge: 1
   isInPlace: 0
   animationEnabled: 0
@@ -14485,8 +14489,7 @@ Light:
   m_BounceIntensity: 0
   m_ColorTemperature: 5500
   m_UseColorTemperature: 1
-  m_BoundingSphereOverride: {x: 9.314623e-39, y: 1.1024223e+24, z: 1.0901188e+27,
-    w: 7.006224e+22}
+  m_BoundingSphereOverride: {x: 6, y: 79, z: 12, w: -80}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -16276,7 +16279,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: {x: 0, y: 0, z: 0}
   angle: 0
-  colour: {r: 0.5257999, g: 0.09948988, b: 0.35334915, a: 1}
+  colour: {r: 0.3431279, g: 0.7656722, b: 0.43752787, a: 1}
   useHinge: 1
   isInPlace: 0
   animationEnabled: 0
@@ -16364,7 +16367,7 @@ MonoBehaviour:
   executeInEditMode: 1
   JFAImplementation: {fileID: 7200000, guid: 3c29260ac4ca05f4780f9a4c44f20268, type: 3}
   MtVImplementation: {fileID: 7200000, guid: 39d9f785515d9ba49a5753410e0020fb, type: 3}
-  outputRenderTexture: {fileID: 328470100}
+  outputRenderTexture: {fileID: 1103626005}
   mesh: {fileID: 141346115}
   skinnedMeshRenderer: {fileID: 973177457}
   materialOutput: {fileID: 2100000, guid: 92f7ad2f404ea904ba517bfd0b0d54ca, type: 2}
@@ -16423,7 +16426,7 @@ MonoBehaviour:
   executeInEditMode: 1
   JFAImplementation: {fileID: 7200000, guid: 3c29260ac4ca05f4780f9a4c44f20268, type: 3}
   MtVImplementation: {fileID: 7200000, guid: 39d9f785515d9ba49a5753410e0020fb, type: 3}
-  outputRenderTexture: {fileID: 647466857}
+  outputRenderTexture: {fileID: 1667193928}
   mesh: {fileID: 614555679}
   skinnedMeshRenderer: {fileID: 973177460}
   materialOutput: {fileID: 2100000, guid: 92f7ad2f404ea904ba517bfd0b0d54ca, type: 2}
@@ -16766,7 +16769,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: {x: 0, y: 0, z: 0}
   angle: 0
-  colour: {r: 0.09630143, g: 0.5460351, b: 0.43184298, a: 1}
+  colour: {r: 0.87293386, g: 0.04600641, b: 0.19952302, a: 1}
   useHinge: 1
   isInPlace: 0
   animationEnabled: 0
@@ -16971,7 +16974,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: {x: 0, y: 0, z: 0}
   angle: 0
-  colour: {r: 0.37840036, g: 0.09008788, b: 0.5727264, a: 1}
+  colour: {r: 0.05165904, g: 0.587401, b: 0.07755046, a: 1}
   useHinge: 1
   isInPlace: 0
   animationEnabled: 0
@@ -17201,7 +17204,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: {x: 0, y: 0, z: 0}
   angle: 0
-  colour: {r: 0.3928901, g: 0.9909954, b: 0.4539128, a: 1}
+  colour: {r: 0.8744788, g: 0.34137052, b: 0.354666, a: 1}
   useHinge: 1
   isInPlace: 0
   animationEnabled: 0
@@ -18577,7 +18580,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: {x: 0, y: 0, z: 0}
   angle: 0
-  colour: {r: 0.8890101, g: 0.85461813, b: 0.055027146, a: 1}
+  colour: {r: 0.22177197, g: 0.3028951, b: 0.64516747, a: 1}
   useHinge: 1
   isInPlace: 0
   animationEnabled: 0
