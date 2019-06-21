@@ -13,6 +13,7 @@ public class BasiliskSceneManager : MonoBehaviour
     // 3 : Black Outro
     public BasiliskScene[] sceneEnvironments;
     public KeyCode nextSceneKey = KeyCode.N;
+    public KeyCode playKey = KeyCode.Space;
 
     int sceneEnvIndex = 0;
     int nextSceneEnvIndex = -1;
@@ -28,8 +29,19 @@ public class BasiliskSceneManager : MonoBehaviour
 
     void Start()
     {
-        Scene scene = (Scene)((int)activeScene);
-        sceneEnvIndex = GetEnvironmentIndex(scene);
+        if (Debug.isDebugBuild)
+        {
+            Play();
+        }
+    }
+
+    void Play()
+    {
+        sceneEnvIndex = GetEnvironmentIndex(Scene.Intro);
+        for (int i = 0; i < sceneEnvironments.Length; i++)
+        {
+            sceneEnvironments[i].Activate(false);
+        }
         sceneEnvironments[sceneEnvIndex].Activate(true);
         sceneEnvironments[sceneEnvIndex].PlayIntro();
     }
@@ -44,6 +56,10 @@ public class BasiliskSceneManager : MonoBehaviour
         if (Input.GetKeyDown(nextSceneKey))
         {
             NextScene();
+        }
+        if (Input.GetKeyDown(playKey))
+        {
+            Play();
         }
         if (Input.GetKeyDown("1"))
         {
